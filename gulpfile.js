@@ -19,7 +19,7 @@ gulp.task('js-build', () => {
 		.pipe(babel({
 			presets: ['es2015']
 		}))
-		.pipe(concat('all.js'))
+		//.pipe(concat('all.js'))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('public/js'));
 });
