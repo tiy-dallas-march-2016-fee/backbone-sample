@@ -29,5 +29,5 @@ gulp.task('sass-build', function () {
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./public/css/style.css'));
+  .pipe(gulp.dest('./public/css'));
 });
