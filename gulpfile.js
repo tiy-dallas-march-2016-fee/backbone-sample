@@ -3,15 +3,15 @@ var sourcemaps = require('gulp-sourcemaps');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
+var shell = require('gulp-shell');
 
-gulp.task('default', ['js-build', 'sass-build', 'watch']);
+gulp.task('default', ['js-build', 'sass-build', 'watch', 'server']);
 
 
 gulp.task('watch', () => {
   gulp.watch('src/js/**/*.js', ['js-build']);
   gulp.watch('src/scss/**/*.scss', ['sass-build']);
 });
-
 
 gulp.task('js-build', () => {
 	return gulp.src('src/js/**/*.js')
@@ -31,3 +31,7 @@ gulp.task('sass-build', function () {
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('./public/css'));
 });
+
+gulp.task('server', shell.task([
+  'node server'
+]));
