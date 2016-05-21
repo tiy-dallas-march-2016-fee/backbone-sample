@@ -1,10 +1,11 @@
-window.FlashCard = {};
-
 (function(context) {
 
+  Parse.initialize("rXS3bKysxBRibj6MnlCD");
+  Parse.serverURL = 'https://dry-forest-60293.herokuapp.com/parse/'
+
+  console.log('context', context);
 
 
-  
 
 
   /*
